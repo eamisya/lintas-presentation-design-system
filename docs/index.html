@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lintas Presentation Design System — Deck Skill Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/brand/lintas-group-logo.png" type="image/png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand-lockup">
+        <img src="assets/brand/lintas-group-logo.png" alt="Lintas Group" class="brand-logo" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <span class="brand-sys">Lintas Presentation Design System</span>
+          <h1 class="brand-title">Deck Skill Portal</h1>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn active" data-view="catalog">Deck Skills</button>
+        <button class="nav-btn" data-view="roles">Roles & Recommendations</button>
+        <button class="nav-btn" data-view="guide">LLM Install Guides</button>
+        <button class="nav-btn" data-view="assets">Asset Gallery</button>
+        <a href="downloads/GitHub_Upload_and_Testing_Instructions.doc" class="btn btn-secondary btn-sm" style="margin-left:8px;" download>📄 Testing Guide (.DOC)</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Notice Banner for Skill Naming Convention -->
+  <div class="notice-bar">
+    <div class="container notice-inner">
+      <span class="notice-tag">Notice</span>
+      <span class="notice-text">Each package is optimized for bespoke LLMs (Claude, ChatGPT, Gemini, Antigravity, Copilot). Install one active <code>lintas-deck</code> skill per profile/project workspace.</span>
+    </div>
+  </div>
+
+  <!-- Department & Role Quick Selection Bar -->
+  <section class="member-bar-section">
+    <div class="container member-bar-inner">
+      <div class="role-selector-row">
+        <div class="role-select-item">
+          <label for="deptSelect" class="member-label">1. Department:</label>
+          <select id="deptSelect" class="member-select">
+            <option value="">-- All Departments --</option>
+            <option value="Business Development">Business Development</option>
+            <option value="Contract">Contract</option>
+            <option value="CTS">CTS</option>
+            <option value="Finance">Finance</option>
+            <option value="HR/GA">HR/GA</option>
+            <option value="PMO">PMO</option>
+            <option value="Procurement">Procurement</option>
+            <option value="Sales & Marketing">Sales & Marketing</option>
+          </select>
+        </div>
+
+        <div class="role-select-item">
+          <label for="roleSelect" class="member-label">2. Role in Department:</label>
+          <select id="roleSelect" class="member-select" disabled>
+            <option value="">-- Select department first --</option>
+          </select>
+        </div>
+
+        <button id="resetRoleBtn" class="btn btn-secondary btn-sm" style="display:none; height:38px;">Reset Selection</button>
+      </div>
+
+      <!-- Recommendation Banner -->
+      <div id="roleBanner" class="member-banner" style="display:none;">
+        <div class="member-avatar" id="roleAvatar">★</div>
+        <div class="member-info">
+          <div class="member-name-row">
+            <strong id="roleTitle">CFO / Finance Director</strong>
+            <span class="member-dept-badge" id="roleDeptBadge">Finance</span>
+          </div>
+          <p class="member-rec-text" id="roleScopeText">Strategic capital reviews, margin trade-offs, financial strategy.</p>
+          <p class="member-rec-text" style="margin-top:4px;">
+            Recommended Treatment: <strong id="roleRecTreatment">Executive Editorial (-1)</strong>
+            <span style="color:#5A626A;" id="roleRecReason"> — optimized for executive narrative, board meetings & high-level decision makers.</span>
+          </p>
+        </div>
+        <div class="member-quick-actions">
+          <button id="roleDownloadRecBtn" class="btn btn-primary btn-sm">⚡ Download Recommended Skill (.ZIP)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container main-content">
+    
+    <!-- CATALOG VIEW -->
+    <section id="viewCatalog" class="view-section active">
+      <!-- Search & Filter Controls -->
+      <div class="controls-card">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search by department, role, identity (e.g. Finance, Beyond the Horizon, CTS)...">
+          <button id="clearSearchBtn" class="clear-btn" style="display:none;">&times;</button>
+        </div>
+
+        <div class="filter-row">
+          <div class="filter-group">
+            <span class="filter-label">Quick Department:</span>
+            <div class="filter-chips" id="deptFilterChips">
+              <button class="chip active" data-dept="all">All (8)</button>
+              <button class="chip" data-dept="Business Development">Business Development</button>
+              <button class="chip" data-dept="Contract">Contract</button>
+              <button class="chip" data-dept="CTS">CTS</button>
+              <button class="chip" data-dept="Finance">Finance</button>
+              <button class="chip" data-dept="HR/GA">HR/GA</button>
+              <button class="chip" data-dept="PMO">PMO</button>
+              <button class="chip" data-dept="Procurement">Procurement</button>
+              <button class="chip" data-dept="Sales & Marketing">Sales & Marketing</button>
+            </div>
+          </div>
+
+          <div class="filter-group treatment-group">
+            <span class="filter-label">Treatment:</span>
+            <div class="filter-chips" id="treatmentFilterChips">
+              <button class="chip active" data-treatment="all">Both Treatments</button>
+              <button class="chip" data-treatment="Executive Editorial">Executive Editorial (-1)</button>
+              <button class="chip" data-treatment="Operational Decision Intelligence">Operational Intelligence (-2)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </section>
+
+    <!-- ROLES & RECOMMENDATIONS VIEW -->
+    <section id="viewRoles" class="view-section">
+      <div class="section-heading">
+        <h2>Department & Role Guidance</h2>
+        <p class="section-desc">Find the right presentation skill for your responsibilities. <strong>Executive Editorial (-1)</strong> is designed for leadership narratives and board reviews, while <strong>Operational Decision Intelligence (-2)</strong> is engineered for working sprints, SLAs, and operational tracking.</p>
+      </div>
+      <div class="roles-guide-container" id="rolesGuideContainer">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </section>
+
+    <!-- LLM INSTALLATION GUIDES VIEW -->
+    <section id="viewGuide" class="view-section">
+      <div class="section-heading">
+        <h2>Bespoke LLM Installation Guides</h2>
+        <p class="section-desc">Step-by-step instructions for activating your downloaded Lintas Deck Skill across all major AI platforms.</p>
+      </div>
+
+      <div class="guide-tabs-container">
+        <div class="guide-nav" id="guideNav">
+          <button class="guide-tab-btn active" data-guide="claude">Claude (Web & Desktop)</button>
+          <button class="guide-tab-btn" data-guide="claudecode">Claude Code / Agent SDK</button>
+          <button class="guide-tab-btn" data-guide="antigravity">Google Antigravity</button>
+          <button class="guide-tab-btn" data-guide="chatgpt">OpenAI ChatGPT (Custom GPT)</button>
+          <button class="guide-tab-btn" data-guide="gemini">Google Gemini (Gems)</button>
+          <button class="guide-tab-btn" data-guide="copilot">Microsoft Copilot & 365</button>
+          <button class="guide-tab-btn" data-guide="local">Cursor / VS Code / Local LLM</button>
+        </div>
+
+        <div class="guide-content-panel" id="guideContentPanel">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSET GALLERY & UPLOAD WORKBENCH VIEW -->
+    <section id="viewAssets" class="view-section">
+      <div class="section-heading">
+        <h2>Corporate Brand Assets & Upload Workbench</h2>
+        <p class="section-desc">Approved corporate logos, closing slides, and texture assets are bundled directly in each skill's <code>assets/</code> folder. Third-party partner and client logos are dynamically uploaded per project to preserve brand neutrality.</p>
+      </div>
+
+      <!-- Core Corporate Assets -->
+      <h3 style="font-size:17px; color:#17263B; margin-bottom:14px;">1. Core Bundled Corporate Assets</h3>
+      <div class="assets-gallery-grid" id="assetsGalleryGrid" style="margin-bottom:36px;">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <!-- Upload Workbench -->
+      <div class="upload-workbench-card">
+        <div class="upload-workbench-header">
+          <span class="modal-badge" style="background:#17263B;">Dynamic Client Assets</span>
+          <h3 style="font-size:18px; color:#17263B; margin-top:4px;">2. Stage & Prepare Custom Client / Partner Assets</h3>
+          <p style="font-size:13.5px; color:#5A626A; margin-top:4px;">
+            Need to include a client logo (e.g. telecom operator, enterprise account) or vendor diagram? Drop or select your file below to validate its dimensions, format, and generate the exact prompt instruction for your LLM.
+          </p>
+        </div>
+
+        <div class="upload-dropzone" id="uploadDropzone">
+          <input type="file" id="clientAssetFileInput" accept="image/png,image/jpeg,image/svg+xml" style="display:none;">
+          <div class="upload-icon-circle">📁</div>
+          <h4 style="font-size:15px; color:#171A1D; margin-bottom:4px;">Drag and drop client logo here, or <span style="color:#17263B; text-decoration:underline; cursor:pointer;" id="browseAssetLink">browse file</span></h4>
+          <p style="font-size:12.5px; color:#889098;">Supports transparent PNG, SVG, or high-res JPEG (recommended max height: 200px)</p>
+        </div>
+
+        <!-- Staged Asset Details Preview (shown on select) -->
+        <div id="stagedAssetPreview" class="staged-asset-box" style="display:none;">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Lintas Presentation Design System</strong> — Internal Engineering Tooling
+        <p class="footer-sub">Headquarters: Menara MTH 16th Floor, Jl. MT. Haryono kav. 23, Jakarta 12820 | Email: sales@LT-indonesia.com</p>
+      </div>
+      <div class="footer-right">
+        <span class="footer-tag">16 Skills Available</span>
+        <span class="footer-tag">Deterministic SHA-256</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Post-Download / Skill Detail Modal -->
+  <div id="downloadModal" class="modal-backdrop" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge" id="modalBadge">Download Started</span>
+          <h3 id="modalTitle">Skill Package Downloaded</h3>
+        </div>
+        <button id="modalCloseBtn" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic guide populated on download -->
+      </div>
+      <div class="modal-footer">
+        <button id="modalDoneBtn" class="btn btn-secondary">Close</button>
+        <button id="modalOpenFullGuideBtn" class="btn btn-primary">Open Full Installation Guides</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" style="display:none;"></div>
+
+  <!-- Load Scripts -->
+  <script src="skills-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
