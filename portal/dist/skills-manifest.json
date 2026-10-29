@@ -917,8 +917,8 @@
     {
       "id": "lintas-deck-hr-ga-1",
       "name": "lintas-deck-hr-ga-1",
-      "department": "HR",
-      "treatment": "GA / Executive Editorial",
+      "department": "HR/GA",
+      "treatment": "Executive Editorial",
       "identity": "Human Capital",
       "personality": "human-centered clarity, privacy, fair interpretation, capacity decisions.",
       "description": "Create human-crafted, editable Lintas Group HR/GA PowerPoint presentations using the Human Capital departmental identity and an executive editorial composition system.",
@@ -1031,8 +1031,8 @@
     {
       "id": "lintas-deck-hr-ga-2",
       "name": "lintas-deck-hr-ga-2",
-      "department": "HR",
-      "treatment": "GA / Operational Decision Intelligence",
+      "department": "HR/GA",
+      "treatment": "Operational Decision Intelligence",
       "identity": "Human Capital",
       "personality": "human-centered clarity, privacy, fair interpretation, capacity decisions.",
       "description": "Create human-crafted, editable Lintas Group HR/GA PowerPoint presentations using the Human Capital departmental identity and an operational decision-intelligence composition system.",

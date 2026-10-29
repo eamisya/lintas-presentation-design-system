@@ -81,9 +81,30 @@ for folder in skill_folders:
     desc = re.search(r"description:\s*(.+)", yaml_txt).group(1).strip() if "description:" in yaml_txt else ""
 
     # H1 department & treatment
-    m_h1 = re.search(r"^#\s*Lintas Deck\s*[\u2014\-]\s*(.+?)\s*/\s*(.+)", raw_content, re.MULTILINE)
+    m_h1 = re.search(r"^#\s*Lintas Deck\s*[\u2014\-]\s*(.+?)\s+/\s+(.+)", raw_content, re.MULTILINE)
     dept = m_h1.group(1).strip() if m_h1 else "Lintas Group"
     treatment = m_h1.group(2).strip() if m_h1 else "Standard"
+
+    # Strict normalization
+    dept_norm = {
+        "business-development": "Business Development",
+        "contract": "Contract",
+        "cts": "CTS",
+        "finance": "Finance",
+        "hr-ga": "HR/GA",
+        "pmo": "PMO",
+        "procurement": "Procurement",
+        "sales-marketing": "Sales & Marketing",
+    }
+    for k, v in dept_norm.items():
+        if k in skill_id:
+            dept = v
+            break
+
+    if skill_id.endswith("-1"):
+        treatment = "Executive Editorial"
+    elif skill_id.endswith("-2"):
+        treatment = "Operational Decision Intelligence"
 
     # Department visual identity
     m_id = re.search(r"## Department visual identity\s*[\u2014\-]\s*(.+)", raw_content)
@@ -235,3 +256,10 @@ with open(data_js_file, "w", encoding="utf-8") as f:
     }, indent=2) + ";\n")
 
 print(f"Build completed successfully! Total skills: {len(skills_data)}, Departments: {len(dept_roles)}")
+
+# Sync to docs/ for GitHub Pages
+docs_dir = os.path.join(BASE_DIR, "docs")
+if os.path.exists(docs_dir):
+    shutil.copytree(DIST_DIR, docs_dir, dirs_exist_ok=True)
+    print(f"Synced build output to {docs_dir}")
+
