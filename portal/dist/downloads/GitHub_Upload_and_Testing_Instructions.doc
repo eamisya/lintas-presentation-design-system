@@ -1,0 +1,342 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+xmlns:w='urn:schemas-microsoft-com:office:word'
+xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Lintas Presentation Design System - GitHub Upload & Testing Instructions</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+    size: 8.5in 11.0in;
+    margin: 0.8in 0.85in 0.8in 0.85in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+}
+body {
+    font-family: "Calibri", "Segoe UI", Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.25;
+    color: #171A1D;
+    background-color: #FFFFFF;
+}
+h1 {
+    font-family: "Calibri", "Segoe UI", Arial, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #17263B;
+    margin-top: 18pt;
+    margin-bottom: 6pt;
+    border-bottom: 1.5pt solid #17263B;
+    padding-bottom: 3pt;
+    page-break-after: avoid;
+}
+h2 {
+    font-family: "Calibri", "Segoe UI", Arial, sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #17263B;
+    margin-top: 14pt;
+    margin-bottom: 4pt;
+    page-break-after: avoid;
+}
+p {
+    margin-top: 0pt;
+    margin-bottom: 5pt;
+    line-height: 1.2;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 6pt;
+    margin-bottom: 10pt;
+}
+th {
+    background-color: #17263B;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 9.5pt;
+    text-align: left;
+    padding: 5pt 8pt;
+    border: 1pt solid #17263B;
+}
+td {
+    font-size: 9.5pt;
+    padding: 5pt 8pt;
+    border: 1pt solid #DDD7CA;
+    vertical-align: top;
+}
+.meta-table td {
+    padding: 4pt 8pt;
+    font-size: 9.5pt;
+}
+.meta-label {
+    background-color: #F4F1E9;
+    color: #17263B;
+    font-weight: bold;
+    width: 25%;
+}
+.code-block {
+    background-color: #171A1D;
+    color: #F0F3F6;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9.5pt;
+    padding: 8pt 12pt;
+    margin-top: 4pt;
+    margin-bottom: 8pt;
+    border-radius: 4pt;
+    line-height: 1.3;
+    white-space: pre-wrap;
+}
+.callout {
+    background-color: #F8F6F0;
+    border-left: 4pt solid #B79A61;
+    padding: 8pt 12pt;
+    margin-top: 6pt;
+    margin-bottom: 10pt;
+    font-size: 10pt;
+}
+.callout-blue {
+    background-color: #F0F4F8;
+    border-left: 4pt solid #17263B;
+    padding: 8pt 12pt;
+    margin-top: 6pt;
+    margin-bottom: 10pt;
+    font-size: 10pt;
+}
+.tag {
+    font-family: "Consolas", monospace;
+    background-color: #EAE6DB;
+    padding: 1pt 4pt;
+    font-size: 9pt;
+    color: #171A1D;
+}
+.checklist-item {
+    margin-bottom: 4pt;
+    padding-left: 4pt;
+}
+</style>
+</head>
+<body>
+
+<div style="margin-bottom: 12pt;">
+    <div style="font-family:'Calibri', sans-serif; font-size: 21pt; font-weight: bold; color: #17263B; line-height: 1.1;">
+        LINTAS PRESENTATION DESIGN SYSTEM
+    </div>
+    <div style="font-family:'Calibri', sans-serif; font-size: 13pt; font-weight: bold; color: #B79A61; margin-top: 2pt;">
+        GitHub Repository Upload & Cross-Team Testing Protocol
+    </div>
+</div>
+
+<table class="meta-table">
+    <tr>
+        <td class="meta-label">Author / Maintainer</td>
+        <td>Lintas Group Presentation Systems Working Group</td>
+    </tr>
+    <tr>
+        <td class="meta-label">Classification</td>
+        <td>Internal Engineering & Operational Tooling (Confidential)</td>
+    </tr>
+    <tr>
+        <td class="meta-label">Target Audience</td>
+        <td>Department Leads, PMO, CTS, Finance, BD, Contract, Procurement, HR/GA, Sales</td>
+    </tr>
+    <tr>
+        <td class="meta-label">Deliverables Covered</td>
+        <td>16 Deck Skills, Portal Website (dist), GitHub Pages Deployment, LLM Testing Protocol</td>
+    </tr>
+</table>
+
+<h1>1. Overview & Objective</h1>
+<p>This document details the exact procedures for uploading the Lintas Presentation Design System codebase to a corporate GitHub repository, enabling instant live hosting via <strong>GitHub Pages</strong>, and guiding personnel across all eight departments to download, install, and test their assigned presentation skills in their bespoke LLMs (Claude, ChatGPT, Gemini, Antigravity, Copilot, and Cursor).</p>
+
+<div class="callout">
+    <strong>📌 Key Benefit for Lintas Personnel:</strong> By enabling GitHub Pages, team members do <em>not</em> need to install Git, Python, or node.js. They simply open the live URL in any web browser, select their department and role, download their pre-packaged skill, and follow the 2-minute setup guide for their bespoke LLM.
+</div>
+
+<h1>2. Repository Structure & Files to Upload</h1>
+<p>Ensure your local workspace directory contains the following verified components before pushing:</p>
+
+<table>
+    <tr>
+        <th style="width:30%;">Directory / File</th>
+        <th style="width:30%;">Purpose</th>
+        <th style="width:40%;">Includes</th>
+    </tr>
+    <tr>
+        <td><strong>Lintas_Group_16_Lintas_Deck_Skills/</strong></td>
+        <td>Source repository for all 16 skills</td>
+        <td>16 folders, each with <span class="tag">SKILL.md</span>, <span class="tag">assets/brand/</span>, <span class="tag">assets/textures/</span>, and <span class="tag">assets/uploads/</span></td>
+    </tr>
+    <tr style="background-color: #FAF8F3;">
+        <td><strong>portal/</strong></td>
+        <td>Skill download website project</td>
+        <td><span class="tag">build_portal.py</span>, <span class="tag">roles.json</span>, <span class="tag">start_portal.bat</span>, <span class="tag">README.md</span></td>
+    </tr>
+    <tr>
+        <td><strong>portal/dist/</strong></td>
+        <td>Static site for GitHub Pages</td>
+        <td><span class="tag">index.html</span>, <span class="tag">styles.css</span>, <span class="tag">app.js</span>, <span class="tag">skills-manifest.json</span>, <span class="tag">checksums.txt</span>, and 48 packages in <span class="tag">downloads/</span></td>
+    </tr>
+    <tr style="background-color: #FAF8F3;">
+        <td><strong>lintas-deck-skill-portal/</strong></td>
+        <td>Architecture specification</td>
+        <td><span class="tag">SKILL.md</span> defining portal capabilities and deployment rules</td>
+    </tr>
+    <tr>
+        <td><strong>Lintas Presentation Design System.pptx</strong></td>
+        <td>Visual reference presentation</td>
+        <td>Original native shape deck (69 KB)</td>
+    </tr>
+</table>
+
+<h1>3. Step-by-Step GitHub Upload Instructions</h1>
+<p>Execute the following commands in PowerShell from the project root folder:</p>
+
+<h2>Step 3.1: Navigate to Workspace Root</h2>
+<div class="code-block">cd "D:\VIBE Coding (2026)\Lintas Presentation Design System"</div>
+
+<h2>Step 3.2: Verify .gitignore Configuration</h2>
+<p>Ensure that temporary scratch logs or Python cache files are ignored, while keeping <span class="tag">portal/dist</span> and all download archives intact:</p>
+<div class="code-block"># Create or verify .gitignore
+@"
+__pycache__/
+*.py[cod]
+.gemini/
+scratch/
+"@ | Out-File -FilePath .gitignore -Encoding utf8</div>
+
+<h2>Step 3.3: Initialize Git and Create Initial Commit</h2>
+<div class="code-block">git init
+git add .
+git commit -m "feat: initial release of Lintas Deck Skills and Portal Website"</div>
+
+<h2>Step 3.4: Link to GitHub and Push</h2>
+<p>Create a new repository on GitHub (e.g. named <strong>lintas-presentation-design-system</strong> in your Lintas Group GitHub organization or user account). Then link and push:</p>
+<div class="code-block">git branch -M main
+git remote add origin https://github.com/&lt;your-org-or-username&gt;/lintas-presentation-design-system.git
+git push -u origin main</div>
+
+<h1>4. Enabling Zero-Install Live Access via GitHub Pages</h1>
+<p>To allow team members to test and download skills without running any command-line tools:</p>
+
+<p><strong>Step 1:</strong> Go to your repository on GitHub.com and click the <strong>Settings</strong> tab.</p>
+<p><strong>Step 2:</strong> In the left navigation menu, click <strong>Pages</strong> under the "Code and automation" heading.</p>
+<p><strong>Step 3:</strong> Under "Build and deployment":</p>
+<ul>
+    <li><strong>Source:</strong> Deploy from a branch</li>
+    <li><strong>Branch:</strong> <span class="tag">main</span></li>
+    <li><strong>Folder:</strong> Select <span class="tag">/docs</span> (or <span class="tag">/portal/dist</span> if configured via GitHub Actions)</li>
+</ul>
+
+<div class="callout-blue">
+    <strong>💡 Tip — Quickest GitHub Pages Setup with /docs Folder:</strong><br>
+    GitHub Pages natively supports the <span class="tag">/docs</span> folder on the main branch. Simply copy <span class="tag">portal/dist</span> to <span class="tag">docs/</span> by running:<br>
+    <span class="tag">Copy-Item -Recurse -Force portal\dist docs</span><br>
+    Then commit and push. In GitHub Pages Settings, choose branch 'main' and folder '/docs'.
+</div>
+
+<p><strong>Step 4:</strong> Click <strong>Save</strong>. Within 60 seconds, GitHub Pages will deploy your site to:</p>
+<div class="code-block">https://&lt;your-org-or-username&gt;.github.io/lintas-presentation-design-system/</div>
+<p>Share this URL directly with Lintas Group team members for immediate testing!</p>
+
+<h1>5. Testing Protocol for Lintas Personnel</h1>
+<p>Distribute these instructions to designated testers across all 8 departments:</p>
+
+<h2>Phase 1: Selecting Department & Role</h2>
+<p>1. Open the portal URL in your web browser (Edge, Chrome, or Firefox).<br>
+2. In the top selector bar, pick your <strong>Department</strong> (Business Development, Contract, CTS, Finance, HR/GA, PMO, Procurement, Sales & Marketing).<br>
+3. Select your <strong>Role / Focus</strong> (e.g. 'Executive / Strategic' or 'Operations / Specialist').<br>
+4. Review the Recommendation Banner. It highlights your recommended skill with a gold badge:</p>
+<ul>
+    <li><strong>Executive Editorial (-1):</strong> Optimized for executive narrative, board meetings, and high-level decision makers.</li>
+    <li><strong>Operational Decision Intelligence (-2):</strong> Engineered for working sprint reviews, SLA metrics, and operational dashboards.</li>
+</ul>
+
+<h2>Phase 2: Downloading the Skill Package</h2>
+<p>Click one of the three download buttons on your department card:</p>
+<ul>
+    <li><strong>Download Skill Package (.ZIP):</strong> Complete bundle containing <span class="tag">SKILL.md</span> + <span class="tag">assets/</span> (for Claude, Antigravity, Claude Code).</li>
+    <li><strong>System Prompt (.MD):</strong> Standalone markdown instructions (for ChatGPT Custom GPTs, Gemini Gems, or Copilot).</li>
+    <li><strong>Assets Pack (.ZIP):</strong> Isolated corporate logos and textures.</li>
+</ul>
+
+<h2>Phase 3: Installing into Your Bespoke LLM</h2>
+<table>
+    <tr>
+        <th style="width:25%;">Platform</th>
+        <th style="width:20%;">File to Use</th>
+        <th style="width:55%;">Setup Action</th>
+    </tr>
+    <tr>
+        <td><strong>Claude (Web & Desktop)</strong></td>
+        <td>.ZIP package</td>
+        <td>Settings → Capabilities → Skills → Upload ZIP file</td>
+    </tr>
+    <tr style="background-color: #FAF8F3;">
+        <td><strong>Claude Code (CLI / SDK)</strong></td>
+        <td>.ZIP package</td>
+        <td>Unzip into <span class="tag">~/.claude/skills/</span> or project root <span class="tag">.claude/skills/</span></td>
+    </tr>
+    <tr>
+        <td><strong>Google Antigravity</strong></td>
+        <td>.ZIP package</td>
+        <td>Unpack into workspace or <span class="tag">~/.gemini/antigravity/skills/</span></td>
+    </tr>
+    <tr style="background-color: #FAF8F3;">
+        <td><strong>OpenAI ChatGPT</strong></td>
+        <td>.MD file + Assets</td>
+        <td>Paste .md into Custom GPT Instructions, upload assets to Knowledge, enable Code Interpreter</td>
+    </tr>
+    <tr>
+        <td><strong>Google Gemini (Gems)</strong></td>
+        <td>.MD file + Assets</td>
+        <td>Create Gem, paste .md into Instructions, attach logo images</td>
+    </tr>
+    <tr style="background-color: #FAF8F3;">
+        <td><strong>Microsoft Copilot / 365</strong></td>
+        <td>.MD file</td>
+        <td>Paste .md into Copilot Studio Custom Instructions, link assets in SharePoint</td>
+    </tr>
+</table>
+
+<h2>Phase 4: Run the Standardized Verification Prompt</h2>
+<p>To confirm that your bespoke LLM is strictly enforcing the Lintas Presentation Design System, start a new chat session and copy/paste this verification prompt:</p>
+<div class="code-block">Use the lintas-deck skill to prepare a 3-slide executive presentation for Lintas Group.
+Include:
+1. Cover slide with official Lintas Group logo and our department primary and accent colors.
+2. Content slide featuring our signature departmental visualization.
+3. Closing slide displaying the Menara MTH 16th floor corporate headquarters address block.</div>
+
+<h2>Phase 5: Quality Checklist for Testers</h2>
+<div class="checklist-item">☑ <strong>Widescreen Ratio:</strong> Is the deck 16:9 widescreen (13.333 x 7.5 in) with consistent margins (0.55-0.75 in)?</div>
+<div class="checklist-item">☑ <strong>Department Palette:</strong> Does it use the exact HEX codes for your department (e.g. Finance: #17263B Navy & #B79A61 Gold)?</div>
+<div class="checklist-item">☑ <strong>Typography Restraint:</strong> Are headers Aptos/Calibri (30-42 pt) and labels Consolas (10-13 pt)? No full monospaced paragraphs.</div>
+<div class="checklist-item">☑ <strong>Corporate Brand Logo:</strong> Is lintas-group-logo.png placed with clear-space equal to the height of letter 'L'? No distortion.</div>
+<div class="checklist-item">☑ <strong>Closing Slide:</strong> Does the final slide include Menara MTH 16th floor, Jl. MT. Haryono kav. 23, and sales@LT-indonesia.com?</div>
+<div class="checklist-item">☑ <strong>Brand Neutrality:</strong> Are third-party partner logos excluded unless uploaded dynamically for specific multi-vendor scopes?</div>
+<div class="checklist-item">☑ <strong>Editable Shapes:</strong> Are diagrams native PowerPoint shapes/tables rather than flattened AI images?</div>
+
+<h1>6. Feedback & Issue Reporting</h1>
+<p>Testers encountering any formatting issues, broken links, or palette anomalies should submit an Issue on the GitHub repository:</p>
+<p>1. Navigate to: <span class="tag">https://github.com/&lt;your-org-or-username&gt;/lintas-presentation-design-system/issues</span><br>
+2. Click 'New Issue' and include:<br>
+&nbsp;&nbsp;&nbsp;• Department & Role tested (e.g. PMO / Delivery Lead)<br>
+&nbsp;&nbsp;&nbsp;• LLM Platform tested (e.g. Claude Desktop 3.7 Sonnet, ChatGPT Plus, Gemini Gem)<br>
+&nbsp;&nbsp;&nbsp;• Attached screenshot or generated .pptx slide<br>
+&nbsp;&nbsp;&nbsp;• Description of unexpected visual behavior</p>
+
+<p style="text-align: center; color: #5A626A; font-style: italic; margin-top: 24pt; font-size: 9pt;">
+— End of Document —<br>
+Lintas Group Presentation Systems Working Group © 2026
+</p>
+
+</body>
+</html>

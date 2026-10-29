@@ -1,0 +1,69 @@
+# ==============================================================================
+# Lintas Presentation Design System — Git Ignore Configuration
+# ==============================================================================
+
+# Operating System & File System Artifacts
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Microsoft Office Lock Files (created when decks/docs are open)
+~$*.pptx
+~$*.docx
+~$*.doc
+~$*.xlsx
+
+# Python Execution & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/*.egg
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Agent & Local Scratch Workspaces
+scratch/
+.gemini/
+.system_generated/
+*.log
+*.tmp
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ==============================================================================
+# Explicit Inclusions: Ensure Portal Dist & Download Packages are Tracked
+# ==============================================================================
+!portal/dist/
+!portal/dist/downloads/
+!portal/dist/downloads/*.zip
+!portal/dist/downloads/*.md
+!portal/dist/downloads/*.doc
+!portal/dist/downloads/*.docx
+!portal/dist/checksums.txt

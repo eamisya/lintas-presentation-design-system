@@ -1,0 +1,138 @@
+[
+  {
+    "department": "Business Development",
+    "roles": [
+      {
+        "role_id": "bd-lead",
+        "title": "Executive / Business Development Lead",
+        "scope": "Strategic partnerships, executive proposals, market opportunity sizing",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "bd-ops",
+        "title": "Commercial & Account Specialist",
+        "scope": "Opportunity pipeline, account qualification, partner feasibility workflows",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "Contract",
+    "roles": [
+      {
+        "role_id": "contract-lead",
+        "title": "Head of Legal & Contracts",
+        "scope": "Contract negotiations, regulatory risk exposures, governance sign-offs",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "contract-ops",
+        "title": "Contract Operations & Compliance Specialist",
+        "scope": "SLA obligations tracking, contract renewal registries, boundary maps",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "CTS",
+    "roles": [
+      {
+        "role_id": "cts-lead",
+        "title": "CTS General Manager / Engineering Director",
+        "scope": "Executive service health, high-level availability, multi-vendor reviews",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "cts-ops",
+        "title": "Core Network Operations & Incident Lead",
+        "scope": "CS/PS Core technical query tickets, incident root-cause trees, SLA heatmaps",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "Finance",
+    "roles": [
+      {
+        "role_id": "fin-lead",
+        "title": "CFO / Finance Director",
+        "scope": "Board capital reviews, margin trade-offs, financial strategy",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "fin-ops",
+        "title": "FP&A / Cost & Cash Flow Specialist",
+        "scope": "Budget vs. actual variance bridges, aging waterfall, expense drivers",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "HR/GA",
+    "roles": [
+      {
+        "role_id": "hr-lead",
+        "title": "Head of HR & General Affairs",
+        "scope": "Executive talent strategy, organizational design, workforce transitions",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "hr-ops",
+        "title": "People Operations & Workplace Specialist",
+        "scope": "Headcount ramp tracking, talent capability matrix, facility metrics",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "PMO",
+    "roles": [
+      {
+        "role_id": "pmo-lead",
+        "title": "Director of PMO / Governance Lead",
+        "scope": "Portfolio milestone health, steering committee decks, risk escalations",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "pmo-ops",
+        "title": "Project Manager / Delivery Lead",
+        "scope": "Critical path tracking, workstream burnup charts, dependency handoffs",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "Procurement",
+    "roles": [
+      {
+        "role_id": "proc-lead",
+        "title": "Head of Strategic Procurement",
+        "scope": "Vendor portfolio strategies, major spend decisions, supplier governance",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "proc-ops",
+        "title": "Sourcing & Supplier Operations Specialist",
+        "scope": "Cost-breakdown funnels, vendor lead times, contract renewals",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  },
+  {
+    "department": "Sales & Marketing",
+    "roles": [
+      {
+        "role_id": "sales-lead",
+        "title": "Commercial VP / Head of Sales & Marketing",
+        "scope": "Executive commercial reviews, revenue targets, market positioning",
+        "recommended_treatment": "Executive Editorial"
+      },
+      {
+        "role_id": "sales-ops",
+        "title": "Sales Operations & Campaign Specialist",
+        "scope": "Conversion pipelines, territory matrices, customer cohort performance",
+        "recommended_treatment": "Operational Decision Intelligence"
+      }
+    ]
+  }
+]
